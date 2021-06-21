@@ -47,3 +47,16 @@ header .header-content .header-icons i:hover{
     color: rgb(0, 62, 248);
 }
 
+/*media queries*/
+@media only screen and (max-width: 450px) {
+    header .header-content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    header .header-content p{
+        margin-bottom: 10px;
+    }
+}
