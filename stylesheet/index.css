@@ -7,6 +7,10 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+html,body{
+    overflow-x: hidden;
+}
+
 ul{
     list-style: none;
 }
@@ -19,6 +23,14 @@ a{
 .container{
     max-width: 90vw;
     margin: auto;
+}
+
+.overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color:rgb(50 91 123 / 31%);
+    color: #fff;
 }
 
 /*Header*/
@@ -49,7 +61,12 @@ header .header-content .header-icons i:hover{
 
 /*Navbar*/
 #navbar{
-    padding: 20px 0px;
+    padding: 5px 0px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 2;
 }
 
 #navbar .nav-content{
@@ -122,7 +139,80 @@ header .header-content .header-icons i:hover{
     margin-bottom: 20px;
 }
 
+/*Showcase Section*/
+#showcase{
+    background: url('../img/university_of_toronto_1_1.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 90vh;
+    width: 100vw;
+    position: relative;
+}
+
+#showcase .showcase-content{
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#showcase .showcase-content h1{
+    font-size: 40px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+#showcase .showcase-content h2{
+    padding-bottom: 10px;
+    font-size: 60px;
+    text-align: center;
+}
+
+
+#showcase .showcase-content a{
+    color: #fff;
+    background-color: rgb(0, 110, 255);
+    display: inline-block;
+    padding: 8px 12px;
+    margin-top: 20px;
+    transition: all ease-in-out 0.5s;
+}
+
+#showcase .showcase-content a:hover{
+    background-color: rgb(59, 135, 235);
+}
+
 /*media queries*/
+@media only screen and (max-width: 630px){
+    #showcase .showcase-content h1{
+        font-size: 30px;
+    }
+    
+    #showcase .showcase-content h2{
+        font-size: 40px;
+    }
+}
+
+@media only screen and (max-width: 520px){
+    #navbar .nav-content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #showcase .showcase-content h1{
+        font-size: 20px;
+    }
+    
+    #showcase .showcase-content h2{
+        font-size: 30px;
+    }
+}
+
 @media only screen and (max-width: 450px) {
     header .header-content{
         display: flex;
@@ -136,15 +226,11 @@ header .header-content .header-icons i:hover{
     }
 }
 
-@media only screen and (max-width: 520px){
-    #navbar .nav-content{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: column;
+@media only screen and (max-width: 420px){
+    #showcase .showcase-content p{
+        font-size: 14px;
     }
 }
-
 
 @media only screen and (max-width: 413px){
     #navbar .nav-content #logo {
@@ -192,5 +278,33 @@ header .header-content .header-icons i:hover{
 
 }
 
+@media only screen and (max-width: 368px){
+    #showcase .showcase-content{
+        height: 90vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
 
+    #showcase .showcase-content h1{
+        text-align:unset;
+    }
+    
+    #showcase .showcase-content h2{
+        padding-bottom: 10px;
+        text-align: unset;
+        font-size: 25px;
+    }
+
+    #showcase .showcase-content p{
+        width: 300px;
+    }
+
+    #showcase .showcase-content a{
+        position: relative;
+        left: 35%;
+    }
+}
 
